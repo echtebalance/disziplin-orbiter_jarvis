@@ -1,0 +1,27 @@
+{
+  "name": "jarvis-bot",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "bot:dev": "node --env-file-if-exists=.env --watch apps/bot/src/main.ts",
+    "bot:start": "node --env-file-if-exists=.env apps/bot/src/main.ts",
+    "deploy:pi": "bash scripts/deploy-pi.sh",
+    "db:migrate": "node --env-file-if-exists=.env packages/db/src/migrate.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "node --env-file-if-exists=.env --test \"packages/*/test/*.test.ts\""
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/pg": "^8.11.0",
+    "typescript": "^5.9.0"
+  },
+  "description": "Jarvis - Telegram-Bot für Habits, Training und Instagram (Meta-API) / Telegram bot for habits, training and Instagram",
+  "license": "AGPL-3.0-only"
+}

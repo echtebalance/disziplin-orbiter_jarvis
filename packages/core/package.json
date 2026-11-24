@@ -1,0 +1,13 @@
+{
+  "name": "@echte-balance/core",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./crypto": "./src/crypto.ts",
+    "./customers": "./src/customers.ts",
+    "./notifications": "./src/notifications.ts"
+  },
+  "dependencies": {
+    "@echte-balance/db": "*"
+  }
+}

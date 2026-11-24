@@ -1,0 +1,13 @@
+{
+  "name": "@echte-balance/bot",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@echte-balance/core": "*",
+    "@echte-balance/db": "*",
+    "@echte-balance/instagram": "*",
+    "@echte-balance/planner": "*",
+    "@echte-balance/training": "*",
+    "grammy": "^1.46.0"
+  }
+}

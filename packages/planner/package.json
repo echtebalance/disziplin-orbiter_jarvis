@@ -1,0 +1,14 @@
+{
+  "name": "@echte-balance/planner",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./time": "./src/time.ts",
+    "./store": "./src/store.ts",
+    "./stats": "./src/stats.ts",
+    "./habit-catalog": "./src/habit-catalog.ts"
+  },
+  "dependencies": {
+    "@echte-balance/db": "*"
+  }
+}

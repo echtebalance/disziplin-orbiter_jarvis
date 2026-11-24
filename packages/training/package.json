@@ -1,0 +1,14 @@
+{
+  "name": "@echte-balance/training",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./parse": "./src/parse.ts",
+    "./store": "./src/store.ts",
+    "./plan-text": "./src/plan-text.ts"
+  },
+  "dependencies": {
+    "@echte-balance/db": "*",
+    "@echte-balance/planner": "*"
+  }
+}

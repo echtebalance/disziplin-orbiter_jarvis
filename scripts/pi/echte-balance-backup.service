@@ -1,0 +1,9 @@
+# Installieren wie echte-balance-bot.service: PI_USER durch deinen Benutzernamen ersetzen (sed "s/PI_USER/$USER/g").
+[Unit]
+Description=echte_balance Datenbank-Sicherung
+After=postgresql.service
+
+[Service]
+Type=oneshot
+User=PI_USER
+ExecStart=/home/PI_USER/echte-balance/scripts/pi/backup.sh

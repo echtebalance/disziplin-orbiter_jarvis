@@ -1,0 +1,26 @@
+# systemd-Dienst für den Kunden-Bot auf dem Raspberry Pi.
+# Installieren (auf dem Pi, setzt deinen Benutzernamen für PI_USER ein):
+#   sed "s/PI_USER/$USER/g" scripts/pi/echte-balance-bot.service | sudo tee /etc/systemd/system/echte-balance-bot.service
+#   sudo systemctl daemon-reload
+[Unit]
+Description=echte_balance Kunden-Bot (Telegram)
+After=network-online.target postgresql.service
+Wants=network-online.target
+Requires=postgresql.service
+
+[Service]
+Type=simple
+User=PI_USER
+WorkingDirectory=/home/PI_USER/echte-balance
+ExecStart=/usr/bin/node --env-file=.env apps/bot/src/main.ts
+Restart=always
+RestartSec=10
+Environment=NODE_ENV=production
+# Schutz: höchstens 350 MB RAM, kein Schreiben ins System, eigenes /tmp
+MemoryMax=350M
+NoNewPrivileges=true
+ProtectSystem=full
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
